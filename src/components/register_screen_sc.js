@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import { View, Text, TouchbleOpacity, Image, TextInput, StyleSheet, TouchableHighlight, KeyboardAvoidingView, Switch} from 'react-native';
+import { View, Text, TouchableOpacity, Image, TextInput, StyleSheet, TouchableHighlight, KeyboardAvoidingView, Switch} from 'react-native';
 import BackgroundColor from 'react-native-background-color';
+
+const return_arrow = require("../images/return_arrow.png");
 
 export default class RegisterScreenSc extends Component{
   componentDidMount(){
@@ -14,9 +16,12 @@ export default class RegisterScreenSc extends Component{
   render(){
     return (
       <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
-        <View style={{backgroundColor: '#2E8BFD', height: 77, width:500, alignItems: 'center', marginBottom: 40}}>
-          <Text style={{padding: 10, fontSize: 40, color: 'white', fontWeight:'bold', marginBottom: 20}}>MediciNOW</Text>
-        </View>
+      <View style={{backgroundColor: '#2E8BFD', height: 60, width:450, alignItems: 'center', marginBottom: 40, flexDirection: 'row'}}>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('LoginScreen')}>
+          <Image source={return_arrow} style={{marginLeft: 30}}/>
+        </TouchableOpacity>
+        <Text style={{ alignSelf: 'center', padding: 4, fontSize: 40, color: 'white', fontWeight:'bold', marginLeft: 42, marginTop: 10 ,marginBottom: 20}}>MediciNOW</Text>
+      </View>
         <View  style={{ justifyContent: 'flex-start'}}>
           <Text style={{ color: 'black', fontSize: 18, paddingBottom: 5}}>Email:</Text>
           <View style={{borderRadius: 8 , height: 55, width:300, borderWidth: 0.5 , justifyContent: 'flex-start', marginBottom: 40}}>
@@ -33,7 +38,7 @@ export default class RegisterScreenSc extends Component{
           <Text style={{ color: 'black', fontSize: 18, paddingBottom: 5}}>Aceito os Termos de Uso</Text>
             <Switch/>
         </View>
-        <TouchableHighlight style={styles.button} onPress={this.handleSubmit} underlayColor='#99d9f4'>
+        <TouchableHighlight style={styles.button} onPress={() => this.props.navigation.navigate('HomeScreen')} underlayColor='#99d9f4'>
             <Text style={styles.buttonText}>Finalizar Cadastro</Text>
         </TouchableHighlight>
       </KeyboardAvoidingView>

@@ -26,7 +26,7 @@ export default class LoginScreen extends Component{
           <Icon name='lock' size={24} color='white' style={styles.iconPosition} />
         }/>
 
-        <TouchableOpacity style={styles.buttonContainer} >
+        <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('HomeScreen')}>
           <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
 

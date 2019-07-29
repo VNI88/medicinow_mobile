@@ -32,6 +32,8 @@ target 'medicinow_mobile' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
+  pod 'RNCViewpager', :path => '../node_modules/@react-native-community/viewpager'
+
   target 'medicinow_mobileTests' do
     inherit! :search_paths
     # Pods for testing

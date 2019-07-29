@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { View, Text, TouchbleOpacity, Image, TextInput, StyleSheet, TouchableHighlight, KeyboardAvoidingView, Switch} from 'react-native';
+import { View, Text, TouchableOpacity, Image, TextInput, StyleSheet, TouchableHighlight, KeyboardAvoidingView, Switch} from 'react-native';
 import BackgroundColor from 'react-native-background-color';
 
-const return_arrow = require("../images/return_arrow.png")
+const return_arrow = require("../images/return_arrow.png");
 
 export default class RegisterScreenFt extends Component{
   componentDidMount(){
@@ -12,9 +12,11 @@ export default class RegisterScreenFt extends Component{
   render(){
     return (
       <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
-        <View style={{backgroundColor: '#2E8BFD', height: 77, width:450, alignItems: 'center', marginBottom: 40, flexDirection: 'row'}}>
-          <Image source={return_arrow} style={{marginLeft: 30}}/>
-          <Text style={{ alignItems: 'center', padding: 4, fontSize: 40, color: 'white', fontWeight:'bold', marginLeft: 42, marginTop: 10 ,marginBottom: 20}}>MediciNOW</Text>
+        <View style={{backgroundColor: '#2E8BFD', height: 60, width:450, alignItems: 'center', marginBottom: 40, flexDirection: 'row'}}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('LoginScreen')}>
+            <Image source={return_arrow} style={{marginLeft: 30}}/>
+          </TouchableOpacity>
+          <Text style={{ alignSelf: 'center', padding: 4, fontSize: 40, color: 'white', fontWeight:'bold', marginLeft: 42, marginTop: 10 ,marginBottom: 20}}>MediciNOW</Text>
         </View>
         <View  style={{ justifyContent: 'flex-start'}}>
           <Text style={{ color: 'black', fontSize: 18, paddingBottom: 5}}>Nome:</Text>
