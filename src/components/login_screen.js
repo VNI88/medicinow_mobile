@@ -31,14 +31,14 @@ export default class LoginScreen extends Component{
         </TouchableOpacity>
 
         <View style={{ flexDirection: 'row', marginTop: 30, marginBottom: 30}}>
-          <TouchableOpacity style={{height:22, width:29.12 }}>
-            <Image source={google_icon}  />
+          <TouchableOpacity style={{height:22, width:20 }}>
+            <Icon name='facebook-f' size={18} color='white'/>
           </TouchableOpacity>
 
-          <Divider style={{ marginLeft:40, marginRight:40}} />
+          <Divider style={{ alignItems: 'center', marginLeft:40, marginRight:40}} />
 
-          <TouchableOpacity style={{height:32, width:51 }}>
-            <Image source={facebook_icon} />
+          <TouchableOpacity style={{height:22, width: 20 }}>
+            <Icon name='google' size={18} color='white'/>
           </TouchableOpacity>
         </View>
 
